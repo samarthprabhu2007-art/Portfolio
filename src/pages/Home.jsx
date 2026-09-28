@@ -13,9 +13,9 @@ const SOCIALS = [
 ];
 
 const MEMBERSHIPS = [
-  { role: 'Member', org: 'Coding Club, RV College of Engineering', duration: '2025 - Present', desc: '6th rank at CodePulse - Top 16 at CodeQuest 2026 - 2nd place ML Hackathon.' },
-  { role: 'Member', org: 'ACM Student Chapter, RVCE', duration: '2025 - Present', desc: null },
-  { role: 'Member', org: 'Association of Computer Machinery, RVCE', duration: '2025 - Present', desc: null },
+  { role: 'Member', org: 'Coding Club, RV College of Engineering', duration: '2025 � Present', desc: '6th rank at CodePulse � Top 16 at CodeQuest 2026 � 2nd place ML Hackathon.' },
+  { role: 'Member', org: 'ACM Student Chapter, RVCE', duration: '2025 � Present', desc: null },
+  { role: 'Member', org: 'Association of Computer Machinery, RVCE', duration: '2025 � Present', desc: null },
 ];
 
 export default function Home() {
@@ -51,7 +51,7 @@ export default function Home() {
               <span style={{ fontFamily: 'var(--font-heading)', fontStyle: 'italic', fontSize: '1.08rem', color: 'var(--blue)' }}>Computer Science Engineer</span>
               <span style={{ fontFamily: 'var(--font-body)', fontSize: '0.9rem', color: 'var(--blue)', opacity: 0.45 }}>+</span>
               <span style={{ fontFamily: 'var(--font-heading)', fontStyle: 'italic', fontSize: '1.08rem', color: 'var(--blue)' }}>Competitive Programmer</span>
-              <span style={{ fontFamily: 'var(--font-body)', fontSize: '0.72rem', fontStyle: 'italic', color: 'var(--blue)', opacity: 0.5, marginTop: '0.35rem' }}>RVCE · 2nd Year · CGPA 9.83</span>
+              <span style={{ fontFamily: 'var(--font-body)', fontSize: '0.72rem', fontStyle: 'italic', color: 'var(--blue)', opacity: 0.5, marginTop: '0.35rem' }}>RVCE � 2nd Year � CGPA 9.83</span>
             </div>
           </FadeIn>
 
@@ -76,7 +76,7 @@ export default function Home() {
                     <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.85rem', fontWeight: '600', color: 'var(--text-primary)', marginBottom: '0.1rem' }}>{item.role}</p>
                     <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.78rem', color: 'var(--blue)', fontStyle: 'italic', marginBottom: item.desc ? '0.25rem' : 0 }}>
                       {item.org}
-                      {item.duration && <span style={{ color: 'var(--text-secondary)', fontStyle: 'normal', marginLeft: '0.5rem' }}>- {item.duration}</span>}
+                      {item.duration && <span style={{ color: 'var(--text-secondary)', fontStyle: 'normal', marginLeft: '0.5rem' }}>� {item.duration}</span>}
                     </p>
                     {item.desc && <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.78rem', color: 'var(--text-secondary)', lineHeight: 1.55 }}>{item.desc}</p>}
                   </div>
@@ -92,21 +92,30 @@ export default function Home() {
           <FadeIn>
             <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.72rem', fontWeight: '600', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--blue)', marginBottom: '4rem', textAlign: 'center' }}>about me</p>
           </FadeIn>
-          <AboutRow delay={0.05} photoFirst text={<>I'm a CSE student at <strong>RV College of Engineering, Bengaluru</strong>, 2nd year, CGPA 9.83. Passionate about <em>competitive programming, full-stack dev, and AI/ML</em>. Currently at LeetCode <strong>1680</strong> and Codeforces <strong>1130</strong>. 🚀</>} />
-          <AboutRow delay={0.08} photoFirst={false} text={<>I know <strong>C, C++, Python, HTML, CSS</strong> and work with Git daily. I've won hackathons, reached national finals, and built a covert-camera detector. Always building something that matters. 💡</>} />
+          <AboutRow delay={0.05} photoFirst imgSrc="/photos/photo1.jpg" text={<>I'm a CSE student at <strong>RV College of Engineering, Bengaluru</strong>, 2nd year, CGPA 9.83. Passionate about <em>competitive programming, full-stack dev, and AI/ML</em>. Currently at LeetCode <strong>1680</strong> and Codeforces <strong>1130</strong>. 🚀</>} />
+          <AboutRow delay={0.08} photoFirst={false} imgSrc="/photos/photo2.jpg" text={<>I know <strong>C, C++, HTML, CSS, JavaScript</strong> and work with Git daily. I've won hackathons, reached national finals, and built a covert-camera detector. Always building something that matters. 💡</>} />
         </div>
       </section>
     </Layout>
   );
 }
 
-function AboutRow({ text, photoFirst, delay = 0 }) {
+function AboutRow({ text, photoFirst, imgSrc, delay = 0 }) {
   const photo = (
     <FadeIn delay={delay} style={{ flex: 1, minWidth: '240px', maxWidth: '380px' }}>
-      <div className="photo-placeholder">
+      <img 
+        src={imgSrc} 
+        alt="Samarth Prabhu" 
+        style={{ width: '100%', borderRadius: '12px', objectFit: 'cover', aspectRatio: '4/5', background: 'var(--border)' }} 
+        onError={(e) => {
+          e.target.style.display = 'none';
+          e.target.nextSibling.style.display = 'flex';
+        }}
+      />
+      <div className="photo-placeholder" style={{ display: 'none', width: '100%', borderRadius: '12px', aspectRatio: '4/5', background: 'var(--border)', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', color: 'var(--blue)' }}>
         <ImageIcon size={28} opacity={0.4} />
         <span>Add your photo here</span>
-        <span style={{ fontSize: '0.7rem', opacity: 0.6 }}>public/photos/photo1.jpg</span>
+        <span style={{ fontSize: '0.7rem', opacity: 0.6 }}>{imgSrc}</span>
       </div>
     </FadeIn>
   );
