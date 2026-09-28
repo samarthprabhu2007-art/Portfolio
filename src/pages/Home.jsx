@@ -13,9 +13,9 @@ const SOCIALS = [
 ];
 
 const MEMBERSHIPS = [
-  { role: 'Member', org: 'Coding Club, RV College of Engineering', duration: '2025 – Present', desc: '6th rank at CodePulse · Top 16 at CodeQuest 2026 · 2nd place ML Hackathon.' },
-  { role: 'Member', org: 'ACM Student Chapter, RVCE', duration: '2025 – Present', desc: null },
-  { role: 'Member', org: 'Association of Computer Machinery, RVCE', duration: '2025 – Present', desc: null },
+  { role: 'Member', org: 'Coding Club, RV College of Engineering', duration: '2025 ï¿½ Present', desc: '6th rank at CodePulse ï¿½ Top 16 at CodeQuest 2026 ï¿½ 2nd place ML Hackathon.' },
+  { role: 'Member', org: 'ACM Student Chapter, RVCE', duration: '2025 ï¿½ Present', desc: null },
+  { role: 'Member', org: 'Association of Computer Machinery, RVCE', duration: '2025 ï¿½ Present', desc: null },
 ];
 
 export default function Home() {
@@ -51,7 +51,7 @@ export default function Home() {
               <span style={{ fontFamily: 'var(--font-heading)', fontStyle: 'italic', fontSize: '1.08rem', color: 'var(--blue)' }}>Computer Science Engineer</span>
               <span style={{ fontFamily: 'var(--font-body)', fontSize: '0.9rem', color: 'var(--blue)', opacity: 0.45 }}>+</span>
               <span style={{ fontFamily: 'var(--font-heading)', fontStyle: 'italic', fontSize: '1.08rem', color: 'var(--blue)' }}>Competitive Programmer</span>
-              <span style={{ fontFamily: 'var(--font-body)', fontSize: '0.72rem', fontStyle: 'italic', color: 'var(--blue)', opacity: 0.5, marginTop: '0.35rem' }}>RVCE · 2nd Year · CGPA 9.83</span>
+              <span style={{ fontFamily: 'var(--font-body)', fontSize: '0.72rem', fontStyle: 'italic', color: 'var(--blue)', opacity: 0.5, marginTop: '0.35rem' }}>RVCE ï¿½ 2nd Year ï¿½ CGPA 9.83</span>
             </div>
           </FadeIn>
 
@@ -76,7 +76,7 @@ export default function Home() {
                     <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.85rem', fontWeight: '600', color: 'var(--text-primary)', marginBottom: '0.1rem' }}>{item.role}</p>
                     <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.78rem', color: 'var(--blue)', fontStyle: 'italic', marginBottom: item.desc ? '0.25rem' : 0 }}>
                       {item.org}
-                      {item.duration && <span style={{ color: 'var(--text-secondary)', fontStyle: 'normal', marginLeft: '0.5rem' }}>· {item.duration}</span>}
+                      {item.duration && <span style={{ color: 'var(--text-secondary)', fontStyle: 'normal', marginLeft: '0.5rem' }}>ï¿½ {item.duration}</span>}
                     </p>
                     {item.desc && <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.78rem', color: 'var(--text-secondary)', lineHeight: 1.55 }}>{item.desc}</p>}
                   </div>
