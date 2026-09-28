@@ -90,43 +90,23 @@ export default function Home() {
       <section style={{ padding: '5rem 0', borderTop: '1px solid var(--border)' }}>
         <div className="site-container" style={{ maxWidth: '960px', margin: '0 auto' }}>
           <FadeIn>
-            <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.72rem', fontWeight: '600', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--blue)', marginBottom: '4rem', textAlign: 'center' }}>about me</p>
+            <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.72rem', fontWeight: '600', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--blue)', marginBottom: '3rem', textAlign: 'center' }}>about me</p>
           </FadeIn>
-          <AboutRow delay={0.05} photoFirst imgSrc="/photos/photo1.jpg" text={<>I'm a CSE student at <strong>RV College of Engineering, Bengaluru</strong>, 2nd year, CGPA 9.83. Passionate about <em>competitive programming, full-stack dev, and AI/ML</em>. Currently at LeetCode <strong>1680</strong> and Codeforces <strong>1130</strong>. 🚀</>} />
-          <AboutRow delay={0.08} photoFirst={false} imgSrc="/photos/photo2.jpg" text={<>I know <strong>C, C++, HTML, CSS, JavaScript</strong> and work with Git daily. I've won hackathons, reached national finals, and built a covert-camera detector. Always building something that matters. 💡</>} />
+          
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem', maxWidth: '760px', margin: '0 auto', textAlign: 'center' }}>
+            <FadeIn delay={0.05}>
+              <p style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(1.15rem, 2.2vw, 1.4rem)', color: 'var(--blue)', lineHeight: 1.75, fontWeight: '400' }}>
+                I'm a CSE student at <strong>RV College of Engineering, Bengaluru</strong>, 2nd year, CGPA 9.83. Passionate about <em>competitive programming and full-stack dev</em>. Currently at LeetCode <strong>1680</strong> and Codeforces <strong>1130</strong>. 🚀
+              </p>
+            </FadeIn>
+            <FadeIn delay={0.1}>
+              <p style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(1.15rem, 2.2vw, 1.4rem)', color: 'var(--blue)', lineHeight: 1.75, fontWeight: '400' }}>
+                I know <strong>C, C++, HTML, CSS, JavaScript</strong> and work with Git daily. I've won hackathons, reached national finals, and built a covert-camera detector. Always building something that matters. 💡
+              </p>
+            </FadeIn>
+          </div>
         </div>
       </section>
     </Layout>
-  );
-}
-
-function AboutRow({ text, photoFirst, imgSrc, delay = 0 }) {
-  const photo = (
-    <FadeIn delay={delay} style={{ flex: 1, minWidth: '240px', maxWidth: '380px' }}>
-      <img 
-        src={imgSrc} 
-        alt="Samarth Prabhu" 
-        style={{ width: '100%', borderRadius: '12px', objectFit: 'cover', aspectRatio: '4/5', background: 'var(--border)' }} 
-        onError={(e) => {
-          e.target.style.display = 'none';
-          e.target.nextSibling.style.display = 'flex';
-        }}
-      />
-      <div className="photo-placeholder" style={{ display: 'none', width: '100%', borderRadius: '12px', aspectRatio: '4/5', background: 'var(--border)', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', color: 'var(--blue)' }}>
-        <ImageIcon size={28} opacity={0.4} />
-        <span>Add your photo here</span>
-        <span style={{ fontSize: '0.7rem', opacity: 0.6 }}>{imgSrc}</span>
-      </div>
-    </FadeIn>
-  );
-  const textBlock = (
-    <FadeIn delay={delay + 0.06} style={{ flex: 1.4, minWidth: '260px' }}>
-      <p style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(1.15rem, 2.2vw, 1.4rem)', color: 'var(--blue)', lineHeight: 1.75, fontWeight: '400' }}>{text}</p>
-    </FadeIn>
-  );
-  return (
-    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '3.5rem', alignItems: 'center', marginBottom: '5rem', flexDirection: photoFirst ? 'row' : 'row-reverse' }}>
-      {photo}{textBlock}
-    </div>
   );
 }
