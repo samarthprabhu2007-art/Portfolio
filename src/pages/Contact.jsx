@@ -1,14 +1,12 @@
-﻿import { motion } from 'framer-motion';
-import { Mail, MapPin, Download } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Mail, MapPin } from 'lucide-react';
 import { GithubIcon, LinkedinIcon, LeetcodeIcon, CodeforcesIcon } from '../components/SocialIcons';
 import Layout from '../components/Layout';
 import FadeIn from '../components/FadeIn';
 import Accordion from '../components/Accordion';
 
 const EDUCATION = [
-  { degree: 'BE in Computer Science Engineering', institution: 'RV College of Engineering, Bengaluru', year: 'Expected 2029', score: 'CGPA 9.83' },
-  { degree: '12th Grade (Science)', institution: 'Narayana PU College', year: '2025', score: '93.16%' },
-  { degree: '10th Grade', institution: 'BGS National Public School', year: '2023', score: '97%' },
+  { degree: 'BE in Computer Science Engineering', institution: 'RV College of Engineering, Bengaluru', year: 'Expected 2029', score: 'CGPA 9.83' }
 ];
 
 const CERTIFICATIONS = [
@@ -19,19 +17,18 @@ const CERTIFICATIONS = [
 ];
 
 const SKILLS = [
-  { category: 'Languages', items: ['C', 'C++', 'Python', 'HTML', 'CSS', 'JavaScript'] },
+  { category: 'Languages', items: ['C', 'C++', 'HTML', 'CSS', 'JavaScript'] },
   { category: 'Competitive Programming', items: ['DSA', 'Algorithms', 'OOP', 'STL', 'LeetCode 1680', 'Codeforces 1130'] },
-  { category: 'Frameworks & Tools', items: ['MERN Stack', 'React', 'Node.js', 'Express', 'Git', 'GitHub', 'ESP32', 'Flask'] },
-  { category: 'AI / ML', items: ['Machine Learning', 'Computer Vision', 'YOLOv8', 'KNN', 'Naive Bayes', 'Q-Learning', 'LLMs'] },
+  { category: 'Frameworks & Tools', items: ['MERN Stack', 'React', 'Node.js', 'Express', 'Git', 'GitHub', 'ESP32', 'Flask'] }
 ];
 
 const ACHIEVEMENTS = [
-  { label: '?? 1st Place ï¿½ SheSafe Hackathon', detail: 'Covert camera detection ï¿½ RVCE, Bengaluru' },
-  { label: '?? VISION 2047 National Hackathon Finalist', detail: 'Top 16 / 150+ teams ï¿½ Karnataka Edition ï¿½ only first-year team in finals' },
-  { label: '?? 2nd Place ï¿½ ML Hackathon "Gotta Train \'Em All"', detail: 'Pokï¿½mon classification + weight prediction ï¿½ Coding Club RVCE' },
-  { label: '? 6th Rank ï¿½ CodePulse Contest', detail: 'Coding Club RVCE' },
-  { label: '?? Top 16 ï¿½ CodeQuest 2026', detail: 'Rank 4/150 in HackerRank round, won LeetCode 1v1 knockout ï¿½ Coding Club RVCE' },
-  { label: '?? Samsung Hackathon Participant', detail: 'Built GrindGuard ï¿½ AI-powered study enforcement app' },
+  { label: '1st Place - SheSafe Hackathon', detail: 'Covert camera detection - RVCE, Bengaluru' },
+  { label: 'VISION 2047 National Hackathon Finalist', detail: 'Top 16 / 150+ teams - Karnataka Edition - only first-year team in finals' },
+  { label: '2nd Place - ML Hackathon "Gotta Train \'Em All"', detail: 'Pokemon classification + weight prediction - Coding Club RVCE' },
+  { label: '6th Rank - CodePulse Contest', detail: 'Coding Club RVCE' },
+  { label: 'Top 16 - CodeQuest 2026', detail: 'Rank 4/150 in HackerRank round, won LeetCode 1v1 knockout - Coding Club RVCE' },
+  { label: 'Samsung Hackathon Participant', detail: 'Built GrindGuard - AI-powered study enforcement app' },
 ];
 
 const SOCIALS = [
@@ -67,7 +64,6 @@ export default function Contact() {
                 <motion.a key={id} href={href} target="_blank" rel="noopener noreferrer" aria-label={label} className="social-icon" whileHover={{ y: -3 }} transition={{ type: 'spring', stiffness: 300 }}><Icon size={22} /></motion.a>
               ))}
             </div>
-            
           </div>
         </FadeIn>
 
@@ -96,7 +92,7 @@ export default function Contact() {
                 {CERTIFICATIONS.map((c, i) => (
                   <div key={i} style={{ paddingLeft: '0.65rem', borderLeft: '2px solid var(--blue)' }}>
                     <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.85rem', fontWeight: '600', color: 'var(--blue)', marginBottom: '0.1rem' }}>{c.title}</p>
-                    <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.78rem', color: 'var(--blue)', opacity: 0.65, fontStyle: 'italic' }}>{c.issuer}<span style={{ fontStyle: 'normal', marginLeft: '0.5rem', opacity: 0.6 }}>ï¿½ {c.year}</span></p>
+                    <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.78rem', color: 'var(--blue)', opacity: 0.65, fontStyle: 'italic' }}>{c.issuer}<span style={{ fontStyle: 'normal', marginLeft: '0.5rem', opacity: 0.6 }}>- {c.year}</span></p>
                   </div>
                 ))}
               </div>
@@ -136,4 +132,3 @@ export default function Contact() {
     </Layout>
   );
 }
-
